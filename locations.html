@@ -6,64 +6,168 @@
   <title>Locations – ACFI Church</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    body { background: white; color: black; }
-    .location-section { padding: 3rem 2rem; max-width: 800px; margin: auto; }
-    .location-card { margin-bottom: 2rem; border-bottom: 1px solid #ccc; padding-bottom: 2rem; }
-    .location-card h3 { font-size: 2rem; margin-bottom: 0.5rem; }
-    .times, .address { font-size: 1.1rem; margin-bottom: 0.5rem; }
-    .more-btn { display: inline-block; padding: 0.6rem 1.2rem; border: 2px solid black; border-radius: 30px; font-weight: bold; color: black; }
-    footer.location-footer { background: black; color: white; text-align: center; padding: 2rem 1rem; }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: white;
+      color: black;
+    }
+
+    .hero-banner {
+      background: url('images/hero_locations.jpg') center center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    .hero-banner::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .hero-banner h1 {
+      position: relative;
+      z-index: 2;
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .locations-container {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .campus-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .campus {
+      flex: 1 1 350px;
+      border: 1px solid #ddd;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .campus h2 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .campus p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .more-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1.2rem;
+      border: 2px solid black;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+      transition: all 0.2s ease;
+    }
+
+    .more-btn:hover {
+      background: black;
+      color: white;
+    }
+
+    footer.location-footer {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-banner h1 {
+        font-size: 2.5rem;
+      }
+      .campus {
+        flex: 1 1 100%;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <header> 
+
+  <!-- HEADER -->
+  <header>
     <div class="navbar">
-    <div class="logo">ACFI <span>CHURCH</span></div>
-    <div class="nav-links">
-      <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT</a>
-      <a href="locations.html">LOCATIONS</a>
-      <a href="#">NEXT STEPS</a>
-      <a href="#">MEDIA</a>
-      <a href="#">CHURCH ONLINE</a>
+      <div class="logo">ACFI <span>CHURCH</span></div>
+      <div class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <!-- <a href="locations.html">LOCATIONS</a> -->
+        <a href="ministries.html">MINISTRIES</a>
+        <a href="give.html">GIVE</a>
+        <a href="#">CHURCH ONLINE</a>
+      </div>
+      <div class="social">
+        <a href="#">👥</a><a href="#">📷</a><a href="#">📺</a>
+        <a href="#" class="give-btn">GIVE</a>
+      </div>
     </div>
-    </div>
-    <div class="social"><a href="#">👥</a><a href="#">📷</a><a href="#">📺</a><a href="#" class="give-btn">GIVE</a></div>
   </header>
 
-  <section class="location-section">
-    <h2 class="section-title">Our Locations & Service Info</h2>
+  <!-- HERO SECTION -->
+  <section class="hero-banner">
+    <h1>LOCATIONS</h1>
+  </section>
 
-    <div class="location-card">
-      <h3>North Austin Campus</h3>
-      <div class="times"><strong>Sunday Services:</strong> 9:30 am & 11:30 am</div>
-      <div class="times"><strong>First Wednesday Service:</strong> 7 pm</div>
-      <div class="address">15201 Burnet Rd, Austin, TX 78728</div>
-      <a href="#" class="more-btn">More Info</a>
-    </div>
+  <!-- LOCATIONS LIST -->
+  <section class="locations-container">
+    <div class="campus-grid">
 
-    <div class="location-card">
-      <h3>South Austin Campus</h3>
-      <div class="times"><strong>Sunday Services:</strong> 10:00 am + Youth Track</div>
-      <div class="times"><strong>First Wednesday Service:</strong> 7 pm</div>
-      <div class="address">2008 Brandt Rd, Austin, TX 78744</div>
-      <a href="#" class="more-btn">More Info</a>
-    </div>
+      <div class="campus">
+        <h2>North Austin</h2>
+        <p><strong>Sunday Services:</strong> 9:30am & 11:30am</p>
+        <p><strong>First Wednesday:</strong> 7:00pm</p>
+        <p>15201 Burnet Rd, Austin, TX 78728</p>
+        <a href="#" class="more-btn">More Info</a>
+      </div>
 
-    <div class="location-card">
-      <h3>Church Online</h3>
-      <div class="times"><strong>Sunday Services:</strong> Live at 9:30 am & 11:30 am</div>
-      <div class="times"><strong>First Wednesday Service:</strong> 7 pm</div>
-      <div class="address">Join us on YouTube, Facebook, Church Online App, Apple TV, Roku</div>
-      <a href="#" class="more-btn">Watch Live</a>
+      <div class="campus">
+        <h2>South Austin</h2>
+        <p><strong>Sunday Services:</strong> 10:00am + Youth Track</p>
+        <p><strong>First Wednesday:</strong> 7:00pm</p>
+        <p>2008 Brandt Rd, Austin, TX 78744</p>
+        <a href="#" class="more-btn">More Info</a>
+      </div>
+
+      <div class="campus">
+        <h2>Church Online</h2>
+        <p><strong>Live Streaming:</strong> 9:30am & 11:30am</p>
+        <p><strong>Wednesday Night:</strong> 7:00pm</p>
+        <p>Watch via YouTube, Facebook, or Church Online App</p>
+        <a href="#" class="more-btn">Watch Live</a>
+      </div>
+
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="location-footer">
     <p>Know God. Find Life. Make a Difference.</p>
     <div class="footer-nav">Home | App | Sermons | Prayer | Calendar | Jobs | Login | Contact</div>
     <a href="#" class="contact-btn">CONTACT US</a>
   </footer>
+
 </body>
 </html>

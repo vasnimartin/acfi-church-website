@@ -3,30 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ACFI Church</title>
+  <title> ACFI Church</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
- 
 </head>
 <body>
-  <header>
+  <header class="hero-header">
     <div class="navbar">
       <div class="logo">ACFI <span>CHURCH</span></div>
       <div class="nav-links">
-      <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT</a>
-      <a href="locations.html">LOCATIONS</a>
-      <a href="#">NEXT STEPS</a>
-      <a href="#">MEDIA</a>
-      <a href="#">CHURCH ONLINE</a>
-    </div>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <!-- <a href="locations.html">LOCATIONS</a> -->
+        <a href="ministries.html">MINISTRIES</a>
+        <a href="#">CHURCH ONLINE</a>
+      </div>
       <div class="social">
         <a href="#">👥</a>
         <a href="#"></a>
         <a href="#">📺</a>
-        <a href="#" class="give-btn">GIVE</a>
+        <a href="give.html" class="give-btn">GIVE</a>
       </div>
     </div>
+    <picture class="hero-media">
+  <source type="image/webp" srcset="images/acfi_1920.webp">
+  <img src="images/acfi_1920.jpg" alt="" aria-hidden="true" class="hero-img">
+</picture>
     <div class="hero-text">
       <h1>YOU BELONG HERE.</h1>
       <h3>We exist to know God, find life and make a difference.</h3>
@@ -39,40 +41,88 @@
     </div>
   </header>
 
-  <section class="services">
-    <h2>Services Near You</h2>
+    <section class="upcoming-events">
+    <h2>OUR Service</h2>
     <div class="campuses">
       <div class="campus">
-        <h3>NORTH CAMPUS</h3>
-        <p><strong>SUNDAY SERVICES</strong><br>9:30am & 11:30am</p>
-        <p><strong>FIRST WEDNESDAY SERVICE</strong><br>7pm</p>
-      </div>
-      <div class="campus">
-        <h3>SOUTH CAMPUS</h3>
+        <h3>In-Person</h3>
         <p><strong>SUNDAY SERVICES</strong><br>10:00am</p>
-        <p><strong>FIRST WEDNESDAY SERVICE</strong><br>7pm</p>
       </div>
       <div class="campus">
-        <h3>CHURCH ONLINE</h3>
-        <p><strong>SUNDAY SERVICES</strong><br>Live at 9:30am & 11:30am</p>
-        <p><strong>FIRST WEDNESDAY SERVICE</strong><br>7pm</p>
+        <h3>Online</h3>
+        <p><strong>SUNDAY SERVICES</strong><br>10:00am</p>
       </div>
     </div>
+ 
   </section>
 
-  <section class="mission">
-    <h2>Know God. Find Life. Make a Difference.</h2>
-  </section>
+  
+<section class="services">
+  <h2 style="margin:0 0 1rem;">Sunday Service</h2>
+  <p id="live-status" style="margin:0 0 1.25rem;font-weight:700;letter-spacing:.03em;">
+    Checking live status…
+  </p>
 
-  <section class="upcoming-events">
-    <h2>Upcoming at Shoreline</h2>
+  <div class="yt-embed" role="region" aria-label="ACFI Service Video">
+    <iframe
+      id="acfi-player"
+      title="ACFI Church Video"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <div class="cta-buttons" style="margin-top:1rem;">
+    <a id="watch-on-yt" href="#" target="_blank" rel="noopener">Open on YouTube</a>
+  </div>
+</section>
+
+
+<section class="upcoming-events">
+    <h2>Upcoming at ACFI</h2>
     <p>Click on an event for more info</p>
     <div class="event-cards">
-      <img src="images/event1.jpg" alt="Event 1">
-      <img src="images/event2.jpg" alt="Event 2">
-      <img src="images/event3.jpg" alt="Event 3">
+      <img src="https://picsum.photos/400/200" alt="Event 1">
+      <img src="https://picsum.photos/400/200" alt="Event 2">
+      <img src="https://picsum.photos/400/200" alt="Event 3">
     </div>
   </section>
+
+  <!-- Big Feature Image Section -->
+<section class="feature-image">
+  <div class="feature-card-wrapper">
+    <img src="images/Screenshot 2025-08-14 022713.png" alt="Church Building Fund" class="feature-card-img">
+    <a href="church-building-fund.html" class="feature-card-btn">More Details</a>
+  </div>
+</section>
+
+
+
+
+
+<!-- Core Tenants Section -->
+<section class="core-tenants">
+  <div class="container">
+    <h2>Our Core Tenants</h2>
+    <div class="tenant-boxes">
+      <div class="tenant">
+        <h3>Missions</h3>
+        <p>Our Church is committed to support Missions globally</p>
+      </div>
+      <div class="tenant">
+        <h3>Prayer</h3>
+        <p>Ours is a Church that believes in the power of Prayer</p>
+      </div>
+      <div class="tenant">
+        <h3>Children</h3>
+        <p>The future of our Church nurtured in Godly values and ways</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <footer>
     <div class="footer-links">
@@ -85,5 +135,7 @@
       </div>
     </div>
   </footer>
+    <script src="js/live-switch.js"></script>
+
 </body>
 </html>

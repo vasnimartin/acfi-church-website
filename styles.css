@@ -1,208 +1,334 @@
+---------- Base / Reset ----------
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { height: 100%; overflow-x: hidden; }
+
 body {
-      font-family: 'Roboto', sans-serif;
-      background: #111;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
-    a {
-      text-decoration: none;
-      color: white;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+  font-family: 'Roboto', sans-serif;
+  background: #111;
+  color: #fff;
+  margin: 0;
+}
 
-    header {
-      position: relative;
-      display: flex;
-      /* .min-height: 100vh; */
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
-    }
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background: url('images/background.jpg') no-repeat center center/cover;
-      filter: brightness(0.5);
-      z-index: -1;
-    }
+a { color: #fff; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: rgba(0,0,0,0.6);
-      z-index: 2;
-    }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    .nav-links,
-    .social {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
-    .give-btn {
-      border: 2px solid white;
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
-      font-weight: bold;
-    }
+img { max-width: 100%; height: auto; display: block; }
 
-    .hero-text {
-      text-align: center;
-      padding: 3rem;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
-    .hero-text h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    .cta-buttons a {
-      display: inline-block;
-      margin: 1rem 0.5rem;
-      padding: 0.7rem 1.5rem;
-      border: 2px solid white;
-      border-radius: 30px;
-      font-weight: bold;
-    }
+/* ---------- Header / Hero ---------- */
+header {
+  position: relative;
+  display: flex;
+  /* no min-height here */
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
 
-    .services {
-      position: relative;
-      background: url('images/your-bg-image.jpg') center center/cover no-repeat;
-      padding: 4rem 2rem;
-      text-align: center;
-      color: white;
-      z-index: 1;
-    }
-    .services::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 0;
-    }
-    .services > * {
-      position: relative;
-      z-index: 1;
-    }
-    .campuses {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .campus {
-      max-width: 280px;
-    }
 
-    .mission {
-      background: #222;
-      font-size: 2rem;
-      font-weight: bold;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('images/acfibackground.jpg') no-repeat center center / cover;
+  filter: brightness(0.5);
+  z-index: -1;
+}
 
-    .upcoming-events {
-      padding: 4rem 2rem;
-      text-align: center;
-      background: white;
-      color: black;
-      position: relative;
-      z-index: 1;
-    }
-    .upcoming-events::before {
-      content: none;
-    }
-    .event-cards {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-    }
-    .event-cards img {
-      width: 250px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
-    }
-    .event-cards img:hover {
-      transform: scale(1.05);
-    }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0,0,0,0.6);
+  z-index: 2;
+}
 
-    footer {
-      padding: 2rem;
-      background: black;
-      text-align: center;
-    }
-    .contact-btn {
-      border: 2px solid white;
-      padding: 0.5rem 1rem;
-      border-radius: 30px;
-      display: inline-block;
-      margin-top: 1rem;
-    }
+.logo { font-size: 1.5rem; font-weight: 700; }
 
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      .campuses,
-      .event-cards {
-        flex-direction: column;
-        align-items: center;
-      }
-      .hero-text h1 {
-        font-size: 2rem;
-      }
-      .mission {
-        font-size: 1.5rem;
-      }
-    }
-  
-    /* ---------------- ABOUT PAGE STYLES ---------------- */
+.nav-links,
+.social {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.give-btn {
+  border: 2px solid #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+.hero-media, .hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero-img {
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.45);      /* subtle dark overlay so text pops */
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.cta-buttons a {
+  display: inline-block;
+  margin: 1rem 0.5rem;
+  padding: 0.7rem 1.5rem;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  font-weight: 700;
+}
+
+/* Home page ONLY */
+.hero-header {
+  position: relative;
+  min-height: 100vh; /* full-screen hero only on Home */
+}
+
+.hero-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('images/acfibackground.jpg') no-repeat center center / cover;
+  filter: brightness(0.5);
+  z-index: -1;
+}
+
+/* Remove from all generic headers */
+header::before {
+  content: none;
+}
+
+/* Scope the hero media helpers to Home only */
+.hero-header .hero-media,
+.hero-header .hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero-header .hero-img {
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.45);
+}
+
+/* ---------- Services ---------- */
+.services {
+  position: relative;
+  background: url('images/your-bg-image.jpg') center center / cover no-repeat;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+}
+
+.services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+
+.services > * { position: relative; z-index: 1; }
+
+.campuses {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.campus { max-width: 280px; }
+
+/* Responsive 16:9 player with soft rounding & shadow */
+.yt-embed {
+  max-width: 960px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;          /* modern browsers */
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+.yt-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Optional: if you want the services band solid black instead of bg image */
+.services {
+  /* comment the next line if you prefer the photo background */
+  background: #000;              /* solid black band */
+}
+
+/* ---------- Mission (if used) ---------- */
+.mission {
+  background: #222;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* ---------- Upcoming Events ---------- */
+.upcoming-events {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #fff;
+  color: #000;
+  position: relative;
+  z-index: 1;
+}
+
+.event-cards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  overflow: hidden; /* prevent hover scale from causing sideways scroll */
+}
+
+.event-cards img {
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+.event-cards img:hover { transform: scale(1.05); }
+
+/* ---------- Feature Section (Pearl Green + Image Card) ---------- */
+/* Section background in darker pearl green (#7baba5) with centered image “card” */
+/* Pearl green section, centered content */
+.feature-image {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  background-color: #7baba5; /* dark pearl green */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.feature-card-wrapper {
+  text-align: center; /* centers image & button */
+}
+
+.feature-card-img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.feature-card-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: #3b7d7d;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.feature-card-btn:hover {
+  background: #2a5b5b;
+}
+
+
+/* ---------- Core Tenants ---------- */
+.core-tenants {
+  background-color: #fff; /* white background */
+  padding: 60px 20px;
+  text-align: center;
+  color: #000; /* default text color */
+}
+
+.core-tenants h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #000; /* black heading */
+}
+
+.tenant-boxes {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tenant {
+  background: #fff; /* keep cards white */
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.tenant h3 {
+  margin-bottom: 15px;
+  color: #000; /* black subheading */
+}
+
+.tenant p {
+  color: #000; /* black paragraph text */
+  line-height: 1.5;
+}
+
+/* ---------- About Page Blocks (if used) ---------- */
+
 .hero-banner {
-  background: url('images/hero_about.jpg') center center/cover no-repeat;
+  background: url('images/hero_about.jpg') center center / cover no-repeat;
   height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #fff;
   text-align: center;
   position: relative;
 }
+
 .hero-banner h1 {
   font-size: 4rem;
   font-weight: 900;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 }
+
 .light-section {
   padding: 4rem 2rem;
   max-width: 1000px;
   margin: auto;
 }
+
 .section-title {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 900;
   margin-bottom: 2rem;
 }
+
 .lead-pastor {
   display: flex;
   flex-wrap: wrap;
@@ -210,37 +336,251 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .lead-pastor img {
   max-width: 300px;
   border-radius: 10px;
 }
-.lead-pastor .bio {
-  flex: 1;
-  min-width: 280px;
-}
-.value-grid, .faith-grid {
+
+.lead-pastor .bio { flex: 1; min-width: 280px; }
+
+.value-grid,
+.faith-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
   text-align: left;
 }
-.value-grid div, .faith-grid div {
+
+.value-grid div,
+.faith-grid div {
   flex: 1 1 250px;
   padding: 1.5rem;
   border-radius: 10px;
 }
-.value-grid div {
+
+.value-grid div { background: #000; color: #fff; }
+.faith-grid div { background: #f0f0f0; color: #111; }
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 2rem;
   background: #000;
-  color: white;
-}
-.faith-grid div {
-  background: #f0f0f0;
-  color: #111;
-}
-.footer-section {
-  background: black;
-  color: white;
-  padding: 3rem 2rem;
   text-align: center;
+}
+
+.contact-btn {
+  border: 2px solid #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .navbar { flex-direction: column; gap: 1rem; }
+  .campuses, .event-cards { flex-direction: column; align-items: center; }
+  .hero-text h1 { font-size: 2rem; }
+  .mission { font-size: 1.5rem; }
+  .feature-card-img { width: 95%; }
+}
+
+/* ------------ Containers ------------ */
+.container-narrow {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+/* ------------ Give Hero ------------ */
+.give-hero {
+  position: relative;
+  background: #7baba5; /* pearl green */
+  color: #fff;
+}
+
+.give-hero .navbar {
+  background: rgba(0,0,0,0.25);
+}
+
+.give-hero-text {
+  text-align: center;
+  padding: 3.25rem 1.5rem 2.75rem;
+}
+
+.give-hero-text h1 {
+  font-size: 2.4rem;
+  margin: 0 0 0.5rem;
+}
+
+/* ------------ Cards / UI ------------ */
+.card {
+  background: #fff;
+  color: #111;
+  border-radius: 14px;
+  padding: 1.25rem 1.25rem 1.1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.card.soft {
+  background: #f9faf9;
+}
+
+.small { font-size: 0.95rem; }
+.tiny  { font-size: 0.85rem; }
+.dim   { color: rgba(0,0,0,0.6); }
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: transform 0.05s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover { transform: translateY(-1px); }
+
+.btn.primary {
+  background: #3b7d7d;
+  color: #fff;
+  border-color: #2f6666;
+}
+.btn.primary:hover { background: #2a5b5b; }
+
+/* ------------ Address ------------ */
+.address {
+  font-style: normal;
+  line-height: 1.6;
+  background: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px dashed rgba(0,0,0,0.15);
+  display: inline-block;
+}
+
+/* ===== Give Hero (Dark) ===== */
+.give-hero-dark {
+  background: #000; /* black */
+  color: #fff;
+}
+.give-hero-dark .navbar {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(4px);
+}
+.give-hero-text {
+  text-align: center;
+  padding: 3rem 1.5rem 2.5rem;
+}
+.give-hero-text h1 {
+  font-size: 2.4rem;
+  margin: 0 0 0.4rem;
+}
+
+/* ===== Dark Main Section ===== */
+.give-dark {
+  background: #000; /* black section */
+  color: #fff;
+}
+.give-container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+/* Headings & Lead text */
+.give-heading {
+  font-size: 1.9rem;
+  margin: 0 0 0.6rem;
+  color: #fff;
+}
+.give-lead {
+  font-size: 1.05rem;
+  margin: 0 0 1rem;
+  color: #f3f3f3;
+}
+
+/* Verse block */
+.give-verse {
+  border-left: 4px solid #fff;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0 1.5rem;
+  font-style: italic;
+  color: #fefefe;
+}
+.give-verse span {
+  display: inline-block;
+  margin-left: 0.25rem;
+  opacity: 0.85;
+}
+
+/* Dark card (mailing address) */
+.card-dark {
+  background: #0f0f0f;
+  border: 1px solid #222;
+  border-radius: 14px;
+  padding: 1.25rem 1.25rem 1.1rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+.address-dark {
+  font-style: normal;
+  line-height: 1.6;
+  background: #0a0a0a;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px dashed rgba(255,255,255,0.22);
+  display: inline-block;
+  color: #fff;
+}
+.muted { color: rgba(255,255,255,0.8); }
+.link-light { color: #fff; text-decoration: underline; }
+
+/* Method blocks (screenshots) */
+.give-section { padding: 1.5rem 0; }
+.give-method {
+  text-align: center;
+}
+.give-method img {
+  max-width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.55); /* crisp white border */
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+.give-method .note {
+  margin-top: 0.6rem;
+  color: #fff;
+}
+
+/* Dividers */
+.divider-white {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255,255,255,0.1), rgba(255,255,255,0.8), rgba(255,255,255,0.1));
+  margin: 2rem 0;
+}
+
+/* Ghost button (optional under PayPal) */
+.btn-ghost {
+  display: inline-block;
+  margin-top: 0.9rem;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.btn-ghost:hover { background: #fff; color: #000; }
+
+/* Small text */
+.tiny { font-size: 0.85rem; }
+.dim-light { color: rgba(255,255,255,0.75); }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .give-hero-text h1 { font-size: 2rem; }
 }

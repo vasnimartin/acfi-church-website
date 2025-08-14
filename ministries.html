@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ministries – ACFI Church</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .hero-banner {
+      background: url('images/hero_ministries.jpg') center center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    .hero-banner::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .hero-banner h1 {
+      position: relative;
+      z-index: 2;
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    /* Ministry sections */
+    .ministry {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      padding: 4rem 2rem;
+    }
+    .ministry img {
+      max-width: 400px;
+      border-radius: 10px;
+      flex: 1 1 300px;
+    }
+    .ministry .text {
+      flex: 1 1 300px;
+    }
+    .ministry h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+    .ministry p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    /* Alternating colors */
+    .dark-section {
+      background: #111;
+      color: white;
+    }
+    .light-section {
+      background: white;
+      color: #111;
+    }
+
+    /* Reverse order for alternating layout */
+    .reverse {
+      flex-direction: row-reverse;
+    }
+
+    @media (max-width: 768px) {
+      .ministry {
+        flex-direction: column;
+        text-align: center;
+      }
+      .reverse {
+        flex-direction: column;
+      }
+    }
+
+    footer.ministry-footer {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
+      <div class="logo">ACFI <span>CHURCH</span></div>
+      <div class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <!-- <a href="locations.html">LOCATIONS</a> -->
+        <a href="ministries.html">MINISTRIES</a>
+        <a href="#">CHURCH ONLINE</a>
+      </div>
+      <div class="social">
+        <a href="#">👥</a><a href="#">📷</a><a href="#">📺</a>
+        <a href="give.html" class="give-btn">GIVE</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-banner">
+    <h1>MINISTRIES</h1>
+  </section>
+
+  <!-- Ministries -->
+  <section class="ministry dark-section">
+    <img src="https://picsum.photos/400/250?random=1" alt="Children's Ministry">
+    <div class="text">
+      <h2>Children's Ministry</h2>
+      <p>Fun, safe, and engaging environment where kids learn about Jesus through worship, lessons, and activities.</p>
+    </div>
+  </section>
+
+  <section class="ministry light-section reverse">
+    <img src="https://picsum.photos/400/250?random=1" alt="Worship Ministry">
+    <div class="text">
+      <h2>Worship Ministry</h2>
+      <p>Leading our church into God's presence through music and heartfelt worship experiences.</p>
+    </div>
+  </section>
+
+  <section class="ministry dark-section">
+    <img src="https://picsum.photos/400/250?random=1" alt="Prayer Ministry">
+    <div class="text">
+      <h2>Prayer Ministry</h2>
+      <p>Interceding for the needs of our church, community, and world through prayer gatherings and ministry.</p>
+    </div>
+  </section>
+
+  <section class="ministry light-section reverse">
+    <img src="https://picsum.photos/400/250?random=1" alt="Outreach Ministry">
+    <div class="text">
+      <h2>Outreach Ministry</h2>
+      <p>Serving the community with love through outreach projects and acts of kindness.</p>
+    </div>
+  </section>
+
+  <section class="ministry dark-section">
+    <img src="https://picsum.photos/400/250?random=1" alt="Men's Ministry">
+    <div class="text">
+      <h2>Men's Ministry</h2>
+      <p>Equipping men to grow in faith, family, and service through discipleship and fellowship.</p>
+    </div>
+  </section>
+
+  <section class="ministry light-section reverse">
+    <img src="https://picsum.photos/400/250?random=1" alt="Women's Ministry">
+    <div class="text">
+      <h2>Women's Ministry</h2>
+      <p>Encouraging women to grow spiritually and serve together in faith.</p>
+    </div>
+  </section>
+
+  <section class="ministry dark-section">
+    <img src="https://picsum.photos/400/250?random=1" alt="Media Ministry">
+    <div class="text">
+      <h2>Media Ministry</h2>
+      <p>Sharing the Gospel through livestreaming, sound, video, and creative digital content.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="ministry-footer">
+    <p>Know God. Find Life. Make a Difference.</p>
+    <div class="footer-nav">Home | App | Sermons | Prayer | Calendar | Jobs | Login | Contact</div>
+    <a href="#" class="contact-btn">CONTACT US</a>
+  </footer>
+
+</body>
+</html>
